@@ -1,0 +1,40 @@
+@use "./colors" as *;
+@use "./variables" as *;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin h2 {
+  text-align: center;
+  color: $colorSecundario;
+  font-size: $h2D;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-weight: 600;
+}
+
+@mixin h3 {
+  text-align: center;
+  color: $colorSecundario;
+  font-size: $h3D;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+}

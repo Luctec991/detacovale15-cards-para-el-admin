@@ -1,0 +1,205 @@
+@use "./sass/colors" as *;
+@use "./sass/variables" as *;
+@use "./sass/mixins" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("../public/bg_logo.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Navbar */
+
+.navbar {
+  @include flex-between;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  .line {
+    @include flex-center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    color: $colorSecundario;
+  }
+}
+
+/* Home */
+
+.container {
+  @include flex-column;
+  min-height: 60vh;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 8px $colorPrincipal;
+  max-width: 1200px;
+  margin: 20px auto 100px;
+  padding: 40px 20px;
+  background: $colorQuinto;
+  border-radius: 15px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid $colorQuinto;
+  .title {
+    font-size: $h1D;
+    @include flex-center;
+    gap: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .descripcion-principal {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+  }
+  .seccion-dual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 40px 0;
+  }
+}
+
+/* SectionHome */
+
+.columna-info {
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  .icono {
+    margin: 0 auto;
+  }
+  .h2 {
+    @include h2;
+  }
+  .leyenda-container {
+    color: $colorSecundario;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    .h3 {
+      @include h3;
+      padding: 10px;
+    }
+    .lista-recomendaciones {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 25px;
+      li {
+        @include flex-between;
+        gap: 10px;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.15) 0%,
+          rgba(255, 255, 255, 0.1) 100%
+        );
+        margin: 12px 0;
+        padding: 18px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #ecf0f1;
+        font-weight: 500;
+        backdrop-filter: blur(10px);
+        &:hover {
+          transform: translateX(8px);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.25) 0%,
+            rgba(255, 255, 255, 0.15) 100%
+          );
+        }
+      }
+    }
+  }
+  .inLine {
+    @include flex-center;
+    gap: 10px;
+  }
+}
+
+/* Button */
+
+.button {
+  @include flex-center;
+  gap: 10px;
+  text-decoration: none;
+  color: $colorPrincipal;
+  background-color: $colorCuaternario;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+  width: auto;
+  &:hover {
+    background-color: $colorTerciario;
+    color: $colorSecundario;
+  }
+}
+
+/* Social */
+
+.social-float {
+  position: fixed;
+  bottom: 65px;
+  right: 40px;
+  @include flex-column;
+  z-index: 999;
+  .icon {
+    color: $colorSecundario;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    @include flex-center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+  }
+  .whatsapp {
+    background-color: #25d366;
+    &.open {
+      transform: scale(1.1);
+    }
+  }
+  .instagram {
+    background: radial-gradient(
+      circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%
+    );
+    opacity: 0;
+    transform: translateY(0);
+    pointer-events: none;
+    &.visible {
+      opacity: 1;
+      transform: translateY(-80px);
+      pointer-events: all;
+    }
+  }
+}
+
+/* Footer */
+
+.footer {
+  @include flex-center;
+  background: rgba(0, 0, 0, 0.8);
+  color: $colorSecundario;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
