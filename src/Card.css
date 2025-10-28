@@ -1,0 +1,45 @@
+.admin-card {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 8px; /*Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*Sombra Suave */
+    padding: 20px; /*Espacio Interno */
+    margin: 15px; /*Margen Externo */
+    width: 250px; /*Ancho fijo o flexible */
+    transition: transform 0.3s ease-in-out; /*Animacion Suave */
+}
+.admin-card:hover {
+    transform: translateY(-5px); /*Efecto al pasar el mouse */
+}
+
+.card-header {
+    display: flex; /*Flexbox para alinear elementos */
+    align-items: center; /*Centrar elementos verticalmente */
+    margin-bottom: 10px; /*Espacio Inferior */
+}
+
+.card-icon {
+    font-size: 24px; /*Tamaño del Icono */
+    color: #007bff; /*Color Del Icono */
+    margin-right: 10px; /*Espacio a la derecha */
+    /*Estilo del contenedor del icono */
+    background-color: #eaf5ff; /*Fondo del contenedor claro */
+    padding: 8px; /*Espacio interno*/
+    border-radius: 50%; /*Contenedor redondeado */
+    display: flex; /*Flexbox para centrar el icono */
+    justify-content: center; /*centrar horizontalmente */
+}
+
+.card-title {
+    font-size: 14px; /*Tamaño de la fuente */
+    color: #6c757d; /*Color del texto */
+    margin: 0; /*Eliminar Margen */
+    text-transform: uppercase; /*Texto en mayusculas */
+    font-weight: 600; /*Peso de la fuente */
+}
+
+.card-value {
+    font-size: 32px; 
+    font-weight: bold; /*Negrita */
+    color: #343a40; /*Color oscuro para el valor principal */
+    margin: 0; /*Eliminar Margen */ 
+}
